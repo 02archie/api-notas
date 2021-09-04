@@ -6,9 +6,8 @@ const dbConnection = async () => {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         })
-        .then(() => console.log('base de datos ONLINE'))
-        .catch(err => console.log('No se pudo conectar', err));
-
+        .then(() => console.log('Database ONLINE'))
+        .catch(err => console.log('Connection failed', err));
 }
 
 module.exports = {
