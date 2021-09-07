@@ -23,6 +23,10 @@ const UserSchema = Schema({
         required: [true, 'Role is required'],
         emun: ['ADMIN', 'USER']
     },
+    status: {
+        type: Boolean,
+        default: true
+    },
     created_at: {
         type: Date
     },
@@ -30,5 +34,11 @@ const UserSchema = Schema({
         type: Date
     }
 });
+
+UserSchema.methods.toJSON = function () {
+    const { __v, password, _id, ...user } = this.toObject();
+    user.uid = _id; 
+    return user;
+}
 
 module.export = model('User', UserSchema);

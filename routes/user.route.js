@@ -3,7 +3,9 @@ const { check } = require('express-validator');
 
 const { userPost } = require('../controllers/users.controller');
 
-router.post('/',[
+const path = 'user';
+
+router.post(`${user}`,[
     check('name', 'Name is required').not().isEmpty(),
     check('surnames', 'Surnames is required').not().isEmpty(),
     check('email', 'Email is invalid').isEmail(),
