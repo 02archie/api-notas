@@ -1,9 +1,9 @@
 const validateFealds = require('./validate-fealds');
-const validateJWT = require('../middlewares/validate-jwt');
-const validateRol = require('../middlewares/validate-rol');
+const validateJWT = require('./validate-jwt');
+const existRole = require('./validate-role');
 
 module.exports = {
     ...validateFealds,
     ...validateJWT,
-    ...validateRol
+    ...existRole
 }

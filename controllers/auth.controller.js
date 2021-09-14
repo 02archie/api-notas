@@ -9,7 +9,6 @@ const login = async (req, res = response) => {
     const { email, password } = req.body;
 
     try {
-
         // validation if email exist
         const user = await User.findOne({ email });
         if (!user) {

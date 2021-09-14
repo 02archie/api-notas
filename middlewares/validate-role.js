@@ -18,7 +18,7 @@ const adminRol = (req = request, res = response, next) => {
     next();
 }
 
-const tieneRol = (...roles) => {
+const existRole = (...roles) => {
     return (req = request, res = response, next) => {
 
         if (!req.user) {
@@ -37,5 +37,5 @@ const tieneRol = (...roles) => {
 
 module.exports = {
     adminRol,
-    tieneRol,
+    existRole,
 }

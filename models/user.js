@@ -21,7 +21,7 @@ const UserSchema = Schema({
     role: {
         type: String,
         required: [true, 'Role is required'],
-        emun: ['ADMIN', 'USER']
+        enum: ['ADMIN', 'USER']
     },
     status: {
         type: Boolean,
@@ -30,7 +30,7 @@ const UserSchema = Schema({
     created_at: {
         type: Date
     },
-    deleted_at: {
+    updated_at: {
         type: Date
     }
 });
@@ -41,4 +41,4 @@ UserSchema.methods.toJSON = function () {
     return user;
 }
 
-module.export = model('User', UserSchema);
+module.exports = model('User', UserSchema);
