@@ -1,16 +1,17 @@
 const bcryptjs = require('bcryptjs');
-const { response } = require('express');
+const { request, response } = require('express');
 
 const User = require('../models/user');
 const { generateJWT } = require("../helpers/generate-jwt");
 
-const login = async (req, res = response) => {
+const login = async (req = request, res = response) => {
 
     const { email, password } = req.body;
 
     try {
         // validation if email exist
         const user = await User.findOne({ email });
+        
         if (!user) {
             return res.status(400).json({
                 msg: 'User / Password not correct - email'

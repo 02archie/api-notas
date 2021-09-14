@@ -39,7 +39,7 @@ router.put('/:id',[
     validateFealds
 ], userPut );
 
-router.delete('/:id',[
+router.put('/:id',[
     validateJWT,
     // adminRol, //Validacion solo es si tiene rol Admin
     existRole('ADMIN'), //Validacion para varios roles
